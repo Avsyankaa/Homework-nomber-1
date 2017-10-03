@@ -21,7 +21,23 @@ double pow(double a) {
   cout << "Enter a value for the power" << endl;
   int p;
   cin >> p;
-  return pow(a, p);
+  double a1 = a;
+  if (p > 0) {
+    while (p > 1) {
+      a = a1 * a;
+      p--;
+    }
+  } else {
+    if (p < 0) {
+      a = 1 / a;
+      while (p < -1) {
+        a = a / a1;
+        p++;
+      }
+    } else
+      a = 1;
+  }
+  return a;
 }
 int rol(int a) { return (a << 1); }
 int ror(int a) { return (a >> 1); }
